@@ -9,7 +9,7 @@ pipeline {
             echo "This is full file"
             echo datas.toString()
             echo "This is a image"
-            echo datas.spec.spec.toString()
+            echo datas.spec.spec.containers.toString()
             
 
             }
