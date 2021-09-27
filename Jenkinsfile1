@@ -17,13 +17,15 @@ pipeline {
             
            //datas.spec.template.spec.containers.image = "applicationVersion"
            //echo datas.spec.template.spec.containers.image.toString()
+           //////////////////////
            
-           datas.spec.replicas = "1"
-           writeYaml file: 'deployment-definition-tmp.yml', data: datas
-            
-            
-
-
+           mydata = readYaml file: "deployment-definition-tmp.yml"
+           //modify
+           //mydata.info = "b"
+           //writeYaml file: 'newtest.yaml', data: mydata
+           
+           
+           /////////////////////
 
             
 
