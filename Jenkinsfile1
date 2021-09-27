@@ -2,7 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Read YAML file') {
-        echo 'Starting Read YAML file '
+            steps{
+            echo 'Starting Read YAML file '
+            }
         
         }
         stage('Build image') {
