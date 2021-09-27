@@ -17,6 +17,9 @@ pipeline {
             
            //datas.spec.template.spec.containers.image = "applicationVersion"
            //echo datas.spec.template.spec.containers.image.toString()
+           
+           datas.spec.replicas = "1"
+           writeYaml file: 'deployment-definition-tmp.yml', data: datas
             
             
 
