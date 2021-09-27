@@ -7,9 +7,9 @@ pipeline {
             script{ datas = readYaml (file: 'deployment-definition.yml') }
             //echo datas.ear_file.deploy.toString()
             echo "This is full file"
-            echo datas.ear_file.toString()
+            echo datas.toString()
             echo "This is a image"
-            echo datas.spec.containers.image.toString()
+            echo datas.spec.toString()
             
 
             }
