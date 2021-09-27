@@ -16,10 +16,10 @@ pipeline {
             echo datas.spec.template.spec.containers.image.toString()
             
             // Change something in the file
-            sh "rm deployment-definition-tmp.yml"
-            datas.spec.template.spec.containers.image = applicationVersion
             //sh "rm deployment-definition-tmp.yml"
-            //writeYaml file: filename, data: data
+            //datas.spec.template.spec.containers.image = applicationVersion
+            sh "rm deployment-definition-tmp.yml"
+            writeYaml file: deployment-definition-tmp.yml, datas.spec.template.spec.containers.image : applicationVersion
 
 
 
