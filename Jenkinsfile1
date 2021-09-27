@@ -17,7 +17,11 @@ pipeline {
             
             // Change something in the file
             sh "rm deployment-definition-tmp.yml"
-            datas.spec.template.spec.containers.image = "dockerwebapp"
+            datas.spec.template.spec.containers.image. = applicationVersion
+            sh "rm deployment-definition-tmp.yml"
+            writeYaml file: filename, data: data
+
+
 
             
 
