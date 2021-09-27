@@ -1,10 +1,15 @@
 pipeline {
     agent any
     stages {
+        stage("Create tmp YAML file"){
+            steps{
+                sh 'cp deployment-definition.yml deployment-definition-tmp.yml'  
+            }
+        }
         stage('Read YAML file') {
             steps{
             echo 'Starting Read YAML file '
-            script{ datas = readYaml (file: 'deployment-definition.yml') }
+            script{ datas = readYaml (file: 'deployment-definition-tmp.yml') }
             //echo datas.ear_file.deploy.toString()
             echo "This is full file"      
             echo datas.toString()
