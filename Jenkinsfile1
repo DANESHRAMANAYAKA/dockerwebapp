@@ -6,7 +6,7 @@ pipeline {
             echo 'Starting Read YAML file '
             script{ datas = readYaml (file: 'deployment-definition.yml') }
             //echo datas.ear_file.deploy.toString()
-            echo datas.toString()
+            echo datas.spec.toString()
             
 
             }
