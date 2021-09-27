@@ -1,6 +1,10 @@
 pipeline {
     agent any
     stages {
+        stage('Read YAML file') {
+        echo 'Starting Read YAML file '
+        
+        }
         stage('Build image') {
             steps {
                 echo 'Starting to build docker image'
