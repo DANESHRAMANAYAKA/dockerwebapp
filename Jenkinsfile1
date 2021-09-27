@@ -6,10 +6,10 @@ pipeline {
             echo 'Starting Read YAML file '
             script{ datas = readYaml (file: 'deployment-definition.yml') }
             //echo datas.ear_file.deploy.toString()
-            echo "This is full file"
+            echo "This is full file"      
             echo datas.toString()
             echo "This is a image"
-            echo datas.spec.containers.toString()
+            echo datas.spec.toString()
             
 
             }
