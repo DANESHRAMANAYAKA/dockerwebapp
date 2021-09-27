@@ -19,7 +19,7 @@ pipeline {
             //sh "rm deployment-definition-tmp.yml"
             //datas.spec.template.spec.containers.image = applicationVersion
             sh "rm deployment-definition-tmp.yml"
-            writeYaml file: deployment-definition-tmp.yml, datas.spec.template.spec.containers.image : applicationVersion
+            writeYaml file: deployment-definition-tmp.yml, datas.spec.template.spec.containers.image : "applicationVersion"
 
 
 
