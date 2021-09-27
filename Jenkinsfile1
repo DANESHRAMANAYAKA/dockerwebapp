@@ -19,14 +19,12 @@ pipeline {
            //echo datas.spec.template.spec.containers.image.toString()
            //////////////////////
            
-           def filename = 'deployment-definition-tmp.yml'
-           def data = readYaml file: filename
+           def amap = ['something': 'my datas',
+                    'size': 3,
+                    'isEmpty': false]
 
-           // Change something in the file
-           data.spec.template.spec.containers.image.toString = "applicationVersion"
-
-           sh "rm $filename"
-           writeYaml file: filename, data: data
+           writeYaml file: 'datas.yaml', data: amap
+           def read = readYaml file: 'datas.yaml'
 
            
            
