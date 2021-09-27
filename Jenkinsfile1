@@ -4,6 +4,9 @@ pipeline {
         stage('Read YAML file') {
             steps{
             echo 'Starting Read YAML file '
+            script{ datas = readYaml (file: 'deployment-definition.yml') }
+            echo datas.ear_file.deploy.toString()
+
             }
         
         }
