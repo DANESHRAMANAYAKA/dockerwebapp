@@ -29,8 +29,8 @@ pipeline {
                    
                     echo "------------------------------------------------"
                     //data.spec.template.spec.containers.image = ${dockerwebappname}
-                    data.spec.template.spec.containers.image[0]= "dockerwebappname"
-                    echo data.toString()
+                    /data.spec.template.spec.containers.image[0]= "dockerwebappname"
+                    //echo data.toString()
       
  
                     sh "rm $filename"
