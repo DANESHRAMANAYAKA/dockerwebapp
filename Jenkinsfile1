@@ -22,7 +22,7 @@ pipeline {
                      echo it.image
                      
                      }
-                    echo data.spec.template.spec.containers[0].image.toString()
+                    //echo data.spec.template.spec.containers[0].image.toString()
                     
                     echo "Debug-----"
                     
