@@ -17,7 +17,7 @@ pipeline {
 
                     // Change something in the file
                     ///data.spec.template.spec.containers.name = 'dockerwebapp'
-                    echo data.spec.template.spec.containers.name.toString()
+                    echo data.spec.template.spec.containers.toString()
                      
                     
 
