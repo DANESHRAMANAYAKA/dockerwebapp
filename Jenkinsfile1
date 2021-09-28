@@ -18,6 +18,9 @@ pipeline {
                     //echo datas.spec.template.spec.containers.image.toString()
                     //////////////////////////////////////////////////////////////
                     
+
+       
+                    
                     def filename = 'deployment-definition-tmp.yml'
                     def data = readYaml file: filename
 
@@ -29,6 +32,7 @@ pipeline {
 
                     sh "rm $filename"
                     writeYaml file: filename, data: data
+
 
                    
  
