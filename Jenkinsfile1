@@ -16,6 +16,10 @@ pipeline {
                     echo datas.toString()
                     echo "This is a image"
                     echo datas.spec.template.spec.containers.image.toString()
+                    
+                    datas.spec.template.spec.containers.image = "applicationVersion"
+                    echo datas.spec.template.spec.containers.image.toString()
+ 
             
                
                
