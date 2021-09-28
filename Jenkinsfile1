@@ -19,8 +19,7 @@ pipeline {
            //echo datas.spec.template.spec.containers.image.toString()
            //////////////////////
            
-           def username = 'Jenkins'
-           
+          
            
            /////////////////////
            script{
