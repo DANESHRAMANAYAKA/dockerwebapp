@@ -21,17 +21,13 @@ pipeline {
                      
                     
 
-                    ///sh "rm $filename"
-                    ///writeYaml file: filename, data: data
-
-                    ///////////////////////////////////////////////
+                    sh "rm $filename"
+                    writeYaml file: filename, data: data
+                    ///////////
+                    def amap = [apiVersion:apps/v1, kind:Deployment, metadata:[name:frontend, labels:[app:mywebsite, tier:frontend]], spec:[replicas:4, template:[metadata:[name:myapp-pod, labels:[app:myapp]], spec:[containers:[[name:nginx, image:nginx]]]], selector:[matchLabels:[app:myapp]]]]
+                    writeYaml file: 'datas.yaml', data: amap
                     
-                    mydata = readYaml file: "deployment-definition-tmp.yml"
-                    //modify
-                    mydata.spec.template.spec.containers.name = "b"
-                    writeYaml file: 'newtest.yaml', data: mydata
-                    
-                    //////////////////////////////////////////////
+                    //////////////////////
                    
  
             
