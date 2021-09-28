@@ -19,6 +19,7 @@ pipeline {
                     //data.spec.template.spec.containers.image = 'dockerwebapp'
                     echo "-----getClass()----"
                     println(data.getClass())
+                    assert data.size 
                     echo "-------------------"
                     echo data.spec.template.spec.containers.image.toString()
                      
