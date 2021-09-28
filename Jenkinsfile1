@@ -17,7 +17,10 @@ pipeline {
 
                     // Change something in the file
                     echo "Debug-----"
-                    //echo data.spec.template.spec.containers.name[0].toString()
+                     data.spec.template.spec.containers.each{ 
+                     echo it.ame
+                     
+                     }
                     echo data.spec.template.spec.containers[0].image.toString()
                     
                     echo "Debug-----"
