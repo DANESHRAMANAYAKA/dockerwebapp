@@ -17,17 +17,13 @@ pipeline {
 
                     // Change something in the file
                     ///data.spec.template.spec.containers.name = 'dockerwebapp'
-                    ///echo data.spec.template.spec.containers.name.toString()
+                    echo data.spec.template.spec.containers.name.toString()
                      
                     
 
                     sh "rm $filename"
                     writeYaml file: filename, data: data
-                    ///////////
-                    def amap = [apiVersion:apps/v1, kind:Deployment, metadata:[name:frontend, labels:[app:mywebsite, tier:frontend]], spec:[replicas:4, template:[metadata:[name:myapp-pod, labels:[app:myapp]], spec:[containers:[[name:nginx, image:nginx]]]], selector:[matchLabels:[app:myapp]]]]
-                    writeYaml file: 'datas.yaml', data: amap
-                    
-                    //////////////////////
+
                    
  
             
