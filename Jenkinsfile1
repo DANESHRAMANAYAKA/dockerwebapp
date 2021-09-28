@@ -16,15 +16,22 @@ pipeline {
                     def data = readYaml file: filename
 
                     // Change something in the file
-                    data.spec.template.spec.containers.name = 'dockerwebapp'
-                    echo data.spec.template.spec.containers.name.toString()
+                    ///data.spec.template.spec.containers.name = 'dockerwebapp'
+                    ///echo data.spec.template.spec.containers.name.toString()
                      
                     
 
-                    sh "rm $filename"
-                    writeYaml file: filename, data: data
+                    ///sh "rm $filename"
+                    ///writeYaml file: filename, data: data
 
-
+                    ///////////////////////////////////////////////
+                    
+                    mydata = readYaml file: "deployment-definition-tmp.yml"
+                    //modify
+                    mydata.spec.template.spec.containers.name = "b"
+                    writeYaml file: 'newtest.yaml', data: mydata
+                    
+                    //////////////////////////////////////////////
                    
  
             
