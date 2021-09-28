@@ -8,27 +8,22 @@ pipeline {
         }
         stage('Read YAML file') {
             steps{
-            echo 'Starting Read YAML file '
-            script{ datas = readYaml (file: 'deployment-definition-tmp.yml') }
-            echo "This is full file"      
-            echo datas.toString()
-            echo "This is a image"
-            echo datas.spec.template.spec.containers.image.toString()
+               script
+               {
+                    echo 'Starting Read YAML file '
+                    script{ datas = readYaml (file: 'deployment-definition-tmp.yml') }
+                    echo "This is full file"      
+                    echo datas.toString()
+                    echo "This is a image"
+                    echo datas.spec.template.spec.containers.image.toString()
             
-           //datas.spec.template.spec.containers.image = "applicationVersion"
-           //echo datas.spec.template.spec.containers.image.toString()
-           //////////////////////
-           
-          
-           
-           /////////////////////
-           script{
-           def username = 'Jenkins'
-           
-           }
-
-            
-
+               
+               
+                
+                
+                
+                
+                }
             }
         
         }
