@@ -25,8 +25,8 @@ pipeline {
                     data.metadata.name = "applicationVersion"
                     echo data.toString()
 
-                    //sh "rm $filename"
-                    //writeYaml file: filename, data: data
+                    sh "rm $filename"
+                    writeYaml file: filename, data: data
 
                    
  
