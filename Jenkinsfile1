@@ -10,22 +10,13 @@ pipeline {
             steps{
                script
                {
-                    echo 'Starting Read YAML file '
-                    script{ datas = readYaml (file: 'deployment-definition-tmp.yml') }
-                    echo "This is full file"      
-                    echo datas.toString()
-                    echo "This is a image"
-                    //echo datas.spec.template.spec.containers.image.toString()
-                    //////////////////////////////////////////////////////////////
-                    
-
-       
-                    
+              
+   
                     def filename = 'deployment-definition-tmp.yml'
                     def data = readYaml file: filename
 
                     // Change something in the file
-                     data.metadata.name = "dockerwebapp"
+                     data.template.metadata.name = "dockerwebapp"
                      echo data.toString()
                      
                     //echo data.toString()
