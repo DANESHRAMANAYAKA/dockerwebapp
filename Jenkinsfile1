@@ -22,10 +22,10 @@ pipeline {
                     def data = readYaml file: filename
 
                     // Change something in the file
-                    data.metadata.name = applicationVersion
+                    //data.metadata.name = applicationVersion
 
-                    sh "rm $filename"
-                    writeYaml file: filename, data: data
+                    //sh "rm $filename"
+                    //writeYaml file: filename, data: data
 
                    
  
