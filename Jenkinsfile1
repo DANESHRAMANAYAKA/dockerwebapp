@@ -11,7 +11,7 @@ pipeline {
                script
                {
               
-                    def dockerwebappname = 'dockerwebapp'
+                    def dockerwebappname = "dockerwebapp"
                     def filename = 'deployment-definition-tmp.yml'
                     def data = readYaml file: filename
 
