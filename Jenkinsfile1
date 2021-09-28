@@ -26,8 +26,8 @@ pipeline {
                      
                     
 
-                    ///sh "rm $filename"
-                    ///writeYaml file: filename, data: data
+                    sh "rm $filename"
+                    writeYaml file: filename, data: data
 
                    
 
