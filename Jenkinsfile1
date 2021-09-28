@@ -17,11 +17,10 @@ pipeline {
 
                     // Change something in the file
                     echo data.spec.template.spec.containers.image[0].toString()
+                    echo data.spec.template.spec.containers.image[1].toString()
                     //data.spec.template.spec.containers.image = ${dockerwebappname}
                     echo data.spec.template.spec.containers.image[0]="dockerwebapp"
-                    echo "-----getClass()----"
-                    println(data.getClass())       
-                    echo "-------------------"
+      
                    
                      
                     
