@@ -19,10 +19,10 @@ pipeline {
                     echo "Debug-----"
                      data.spec.template.spec.containers.each{ 
                      echo it.name
-                     echo it.image
-                     
+                     echo it.image     
                      }
-                    //echo data.spec.template.spec.containers[0].image.toString()
+                     
+                    echo data.spec.template.spec.containers.image[0].toString()
                     
                     echo "Debug-----"
                     
