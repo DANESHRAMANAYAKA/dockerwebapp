@@ -15,7 +15,7 @@ pipeline {
                     echo "This is full file"      
                     echo datas.toString()
                     echo "This is a image"
-                    echo datas.spec.template.spec.containers.image.toString()
+                    //echo datas.spec.template.spec.containers.image.toString()
                     //////////////////////////////////////////////////////////////
                     
                     def filename = 'deployment-definition-tmp.yml'
