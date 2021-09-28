@@ -16,8 +16,17 @@ pipeline {
                     echo datas.toString()
                     echo "This is a image"
                     echo datas.spec.template.spec.containers.image.toString()
+                    //////////////////////////////////////////////////////////////
                     
-                    datas.spec.template.spec.containers.image = "applicationVersion"
+                    def filename = 'deployment-definition-tmp.yml'
+                    def data = readYaml file: filename
+
+                    // Change something in the file
+                    data.metadata.name = applicationVersion
+
+                    sh "rm $filename"
+                    writeYaml file: filename, data: data
+
                    
  
             
