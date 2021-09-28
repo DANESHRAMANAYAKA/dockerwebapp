@@ -22,8 +22,9 @@ pipeline {
                     def data = readYaml file: filename
 
                     // Change something in the file
+                     data.spec.template.spec.containers.image = "dockerwebapp"
                      echo data.toString()
-                    // data.spec.template.spec.containers.image = "dockerwebapp"
+                     
                     //echo data.toString()
 
                     sh "rm $filename"
