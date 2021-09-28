@@ -17,7 +17,9 @@ pipeline {
 
                     // Change something in the file
                     //data.spec.template.spec.containers.image = 'dockerwebapp'
+                    echo "-----getClass()----"
                     data.getClass()
+                    echo "-------------------"
                     echo data.spec.template.spec.containers.image.toString()
                      
                     
