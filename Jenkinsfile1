@@ -17,8 +17,9 @@ pipeline {
 
                     // Change something in the file
                     echo "Debug-----"
-                    echo data.spec.template.spec.containers[0,0].toString()
-                    echo data.spec.template.spec.containers.image[1].toString()
+                    echo data.spec.template.spec.containers.toString()
+                    echo "Debug-----"
+                    echo data.spec.template.spec.containers.name[1].toString()
                    
                     echo "------------------------------------------------"
                     //data.spec.template.spec.containers.image = ${dockerwebappname}
