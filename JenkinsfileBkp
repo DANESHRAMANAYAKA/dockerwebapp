@@ -1,0 +1,70 @@
+import org.yaml.snakeyaml.Yaml
+
+pipeline {
+    agent any
+    stages {
+        stage("Create tmp YAML file"){
+            steps{
+                sh 'cp deployment-definition.yml deployment-definition-tmp.yml'  
+            }
+        }
+        stage('Read YAML file') {
+            steps{
+               script
+               {
+                    
+                    def dockerwebappname = "dockerwebapp"
+                    def filename = 'deployment-definition-tmp.yml'
+                    def data = readYaml file: filename
+
+                    // Change something in the file
+                    echo "Debug-----"
+                    echo "Get class-----"
+                    println data.spec.template.spec.containers.name[0]
+                    println data
+                    echo "-----"
+                    echo "--Name---"
+                    echo data.spec.template.spec.containers.name[0].toString()
+                    echo "-----"
+                    
+                     data.spec.template.spec.containers.each{ 
+                     echo it.name
+                     echo it.image     
+                     }
+                     
+                    echo data.spec.template.spec.containers.image[0].toString()
+                    
+                    echo "Debug-----"
+                    
+                   
+                    echo "------------------------------------------------"
+          
+ 
+                    sh "rm $filename"
+                    writeYaml file: filename, data: data
+
+                    
+
+                   
+                    
+                    
+
+                   
+
+                
+                }
+            }
+        
+        }
+        stage('Build image') {
+            steps {
+                echo 'Starting to build docker image'
+
+                script {
+                    def customImage = docker.build("dockerwebapp")
+                  
+                }
+            }
+        }
+    }
+}
