@@ -20,10 +20,10 @@ pipeline {
    
      
                     
-                     //data.spec.template.spec.containers.each{ 
-                     //echo it.name
-                     //echo it.image     
-                     //}
+                    data.spec.template.spec.containers.each{ 
+                    echo it.name
+                    echo it.image     
+                    }
                      
                     echo data.spec.template.spec.containers.image[0].toString()
                     
