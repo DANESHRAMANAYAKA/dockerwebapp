@@ -20,7 +20,9 @@ pipeline {
 
                     println data
                     echo "---Test---"
-                    assertTrue(data.spec.template.spec.containers.image == "nginx")
+                    def map = [name:"Jerry", age: 42, city: "New York", hobby:"Singing"]
+                    assertTrue(map["name"] == "Jerry")
+                    
                     echo "---End Test---"
                     
                      data.spec.template.spec.containers.each{ 
