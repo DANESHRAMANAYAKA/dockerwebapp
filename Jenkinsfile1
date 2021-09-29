@@ -23,23 +23,7 @@ pipeline {
                     def map = [name:"Jerry", age: 42, city: "New York", hobby:"Singing"]
                     //assertTrue(map["name"] == "Jerry")
                     
-                    echo "---End Test---"
                     
-                     data.spec.template.spec.containers.each{ 
-                     echo it.name
-                     echo it.image     
-                     }
-                     
-                    echo data.spec.template.spec.containers.image[0].toString()
-                    
-                    echo "Debug-----"
-                    
-                   
-                    echo "------------------------------------------------"
-          
- 
-                    sh "rm $filename"
-                    writeYaml file: filename, data: data
 
                    
 
