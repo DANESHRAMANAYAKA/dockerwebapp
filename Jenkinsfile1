@@ -17,7 +17,7 @@ pipeline {
                     def filename = 'deployment-definition1.yml'
                     def data = readYaml file: filename
 
-   
+                    assert data.spec.template.spec.containers.image[0] == 'my datas'
                     println data
                     
                     data.spec.template.spec.containers.each{ 
