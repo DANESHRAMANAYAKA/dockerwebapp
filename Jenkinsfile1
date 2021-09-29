@@ -21,11 +21,11 @@ pipeline {
      
                     
                     data.spec.template.spec.containers.each{ 
-                    echo it.name
-                    echo it.image     
+                    println it.name
+                    println it.image     
                     }
                      
-                    //echo data.spec.template.spec.containers.image[0].toString()
+                    echo data.spec.template.spec.containers.image[0].toString()
                     
                     
  
