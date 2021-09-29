@@ -1,3 +1,5 @@
+import org.yaml.snakeyaml.Yaml
+
 pipeline {
     agent any
     stages {
@@ -10,7 +12,7 @@ pipeline {
             steps{
                script
                {
-                    import org.yaml.snakeyaml.Yaml
+                    
               
                     def dockerwebappname = "dockerwebapp"
                     def filename = 'deployment-definition-tmp.yml'
