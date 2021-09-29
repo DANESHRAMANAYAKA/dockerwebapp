@@ -18,7 +18,7 @@ pipeline {
                     def data = readYaml file: filename
 
    
-     
+                    println data
                     
                     data.spec.template.spec.containers.each{ 
                     println it.name
