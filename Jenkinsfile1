@@ -1,4 +1,5 @@
 import org.yaml.snakeyaml.Yaml
+import groovy.yaml.YamlSlurper
 
 pipeline {
     agent any
@@ -21,7 +22,7 @@ pipeline {
                     //println data
                     
                     data.spec.template.spec.containers.each{ 
-                    //assert it.name== 'my datas'
+                    it.name== 'my datas'
                     println it.name
                     println it.image     
                     }
@@ -47,6 +48,14 @@ pipeline {
                     assert read.isEmpty == false
                     
                     println amap
+                    
+                    
+                    /////////////////////////////////
+                    def map = [
+                   'monday': 'mon',
+                   'tuesday': 'tue']
+
+
 
                    
 
