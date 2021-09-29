@@ -21,7 +21,7 @@ pipeline {
                     //println data
                     
                     data.spec.template.spec.containers.each{ 
-                    assert it.name== 'my datas
+                    assert it.name== 'my datas'
                     println it.name
                     println it.image     
                     }
