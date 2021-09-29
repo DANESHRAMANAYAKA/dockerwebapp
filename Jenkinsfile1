@@ -21,7 +21,7 @@ pipeline {
                     println data
                     echo "---Test---"
                     def map = [name:"Jerry", age: 42, city: "New York", hobby:"Singing"]
-                    assertTrue(map["name"] == "Jerry")
+                    //assertTrue(map["name"] == "Jerry")
                     
                     echo "---End Test---"
                     
