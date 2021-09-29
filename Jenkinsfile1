@@ -15,7 +15,7 @@ pipeline {
                     
               
                     def dockerwebappname = "dockerwebapp"
-                    def filename = 'deployment-definition-tmp1.yml'
+                    def filename = 'deployment-definition1.yml'
                     def data = readYaml file: filename
 
                     println data
