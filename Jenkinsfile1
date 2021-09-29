@@ -31,6 +31,19 @@ pipeline {
  
                     sh "rm $filename"
                     writeYaml file: filename, data: data
+                    
+                    
+                    
+                    def amap = ['something': 'my datas',
+                    'size': 3,
+                    'isEmpty': false]
+
+                    String yml = writeYaml returnText: true, data: amap
+                    def read = readYaml text: yml
+
+                    assert read.something == 'my datas'
+                    assert read.size == 3
+                    assert read.isEmpty == false
 
                    
 
