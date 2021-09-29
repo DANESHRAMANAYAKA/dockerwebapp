@@ -21,7 +21,7 @@ pipeline {
                     //println data
                     
                     data.spec.template.spec.containers.each{ 
-                    assert it.name== 'my datas'
+                    //assert it.name== 'my datas'
                     println it.name
                     println it.image     
                     }
@@ -36,8 +36,8 @@ pipeline {
                     
                     
                     def amap = ['something': 'my datas',
-                    'size': 3,
-                    'isEmpty': false]
+                                'size': 3,
+                                'isEmpty': false]
 
                     String yml = writeYaml returnText: true, data: amap
                     def read = readYaml text: yml
