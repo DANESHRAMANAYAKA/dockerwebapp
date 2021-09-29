@@ -19,7 +19,9 @@ pipeline {
                     def data = readYaml file: filename
 
                     println data
+                    echo "---Test---"
                     assertTrue(data.spec.template.spec.containers.image == "nginx")
+                    echo "---End Test---"
                     
                      data.spec.template.spec.containers.each{ 
                      echo it.name
