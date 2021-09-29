@@ -17,13 +17,13 @@ pipeline {
                     def filename = 'deployment-definition1.yml'
                     def data = readYaml file: filename
 
-                    // Change something in the file
+   
      
                     
-                     data.spec.template.spec.containers.each{ 
-                     echo it.name
-                     echo it.image     
-                     }
+                     //data.spec.template.spec.containers.each{ 
+                     //echo it.name
+                     //echo it.image     
+                     //}
                      
                     echo data.spec.template.spec.containers.image[0].toString()
                     
@@ -31,12 +31,6 @@ pipeline {
  
                     sh "rm $filename"
                     writeYaml file: filename, data: data
-
-                    
-
-                   
-                    
-                    
 
                    
 
