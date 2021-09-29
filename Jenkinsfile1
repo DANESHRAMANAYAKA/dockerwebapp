@@ -18,14 +18,8 @@ pipeline {
                     def filename = 'deployment-definition-tmp1.yml'
                     def data = readYaml file: filename
 
-                    // Change something in the file
-                    echo "Debug-----"
-                    echo "Get class-----"
                     println data
-                    echo "-----"
-                    echo "--Name---"
-                    echo data.spec.template.spec.containers.name[0].toString()
-                    echo "-----"
+                    assertTrue(data.spec.template.spec.containers.image == "nginx")
                     
                      data.spec.template.spec.containers.each{ 
                      echo it.name
