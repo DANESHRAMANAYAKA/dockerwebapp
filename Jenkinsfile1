@@ -10,6 +10,7 @@ pipeline {
             steps{
                script
                {
+                    import org.yaml.snakeyaml.Yaml
               
                     def dockerwebappname = "dockerwebapp"
                     def filename = 'deployment-definition-tmp.yml'
