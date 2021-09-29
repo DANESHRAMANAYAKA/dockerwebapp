@@ -18,7 +18,7 @@ pipeline {
                     // Change something in the file
                     echo "Debug-----"
                     echo "Get class-----"
-                    data.spec.template.spec.containers.name[0].getClass()
+                    data.getClass()
                     echo "-----"
                     echo "--Name---"
                     echo data.spec.template.spec.containers.name[0].toString()
