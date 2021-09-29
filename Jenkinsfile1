@@ -45,6 +45,8 @@ pipeline {
                     assert read.something == 'my datas'
                     assert read.size == 3
                     assert read.isEmpty == false
+                    
+                    println amap
 
                    
 
