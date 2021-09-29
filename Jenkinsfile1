@@ -14,18 +14,11 @@ pipeline {
                {
                     
                     def dockerwebappname = "dockerwebapp"
-                    def filename = 'deployment-definition-tmp.yml'
+                    def filename = 'deployment-definition1.yml'
                     def data = readYaml file: filename
 
                     // Change something in the file
-                    echo "Debug-----"
-                    echo "Get class-----"
-                    println data.spec.template.spec.containers.name[0]
-                    println data
-                    echo "-----"
-                    echo "--Name---"
-                    echo data.spec.template.spec.containers.name[0].toString()
-                    echo "-----"
+     
                     
                      data.spec.template.spec.containers.each{ 
                      echo it.name
@@ -34,11 +27,7 @@ pipeline {
                      
                     echo data.spec.template.spec.containers.image[0].toString()
                     
-                    echo "Debug-----"
                     
-                   
-                    echo "------------------------------------------------"
-          
  
                     sh "rm $filename"
                     writeYaml file: filename, data: data
